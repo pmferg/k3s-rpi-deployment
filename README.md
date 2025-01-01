@@ -74,7 +74,7 @@ ssh pi@<SERVER_IP> "sudo kubectl get nodes"
 ---
 
 ## What the Script Does
-1. Updates `/boot/cmdline.txt` to enable memory cgroups on all nodes.
+1. Updates `/boot/firmware/cmdline.txt` to enable memory cgroups on all nodes.
 2. Reboots the nodes to apply cgroup changes.
 3. Installs K3s on the server node.
 4. Installs K3s agents and joins them to the server.
@@ -85,7 +85,7 @@ ssh pi@<SERVER_IP> "sudo kubectl get nodes"
 ## Troubleshooting
 ### Memory Cgroup Error
 If K3s fails with `failed to find memory cgroup`, ensure:
-1. The `/boot/cmdline.txt` includes `cgroup_enable=memory cgroup_memory=1`.
+1. The `/boot/firmware/cmdline.txt` includes `cgroup_enable=memory cgroup_memory=1`.
 2. Nodes are rebooted after modifying the file.
 
 ### Port Conflicts
