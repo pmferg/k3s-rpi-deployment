@@ -13,7 +13,7 @@ enable_cgroups() {
     local NODE_IP=$1
     echo "Enabling cgroups on $NODE_IP..."
     ssh "$SSH_USER@$NODE_IP" <<EOF
-sudo sed -i 's/\$/ cgroup_enable=memory cgroup_memory=1/' /boot/cmdline.txt
+sudo sed -i 's/\$/ cgroup_enable=memory cgroup_memory=1/' /boot/firmware/cmdline.txt
 sudo reboot
 EOF
     echo "Rebooting $NODE_IP to apply cgroup changes..."
